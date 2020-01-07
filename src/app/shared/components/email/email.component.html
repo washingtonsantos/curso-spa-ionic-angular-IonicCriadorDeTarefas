@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Reportar Problema</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form
+     [formGroup]="formEmail"
+     (ngSubmit)="sendMessage()">
+
+     <ion-list>
+
+
+        <ion-item margin-bottom>
+           <ion-label>Para:</ion-label>
+           <ion-input
+              type="email"
+              formControlName="to"></ion-input>
+        </ion-item>
+
+
+        <ion-item margin-bottom>
+           <ion-label>Cc:</ion-label>
+           <ion-input
+              type="email"
+              formControlName="cc"></ion-input>
+        </ion-item>
+
+
+        <!-- <ion-item margin-bottom>
+           <ion-label>Bcc:</ion-label>
+           <ion-input
+              type="email"
+              formControlName="bcc"></ion-input>
+        </ion-item> -->
+
+
+        <!-- <ion-item margin-bottom>
+           <span
+              ion-button
+              color="primary"
+              text-center
+              block
+              (click)="retrieveAttachment()">Attachment</span>
+        </ion-item> -->
+
+
+        <ion-item margin-bottom>
+           <ion-label>Assunto:</ion-label>
+           <ion-input
+              type="string"
+              formControlName="subject"></ion-input>
+        </ion-item>
+
+
+        <ion-item margin-bottom>
+           <ion-label>Mensagem:</ion-label>
+           <ion-textarea
+              formControlName="message"></ion-textarea>
+        </ion-item>
+
+
+        <button
+           ion-button
+           color="primary"
+           text-center
+           block [disabled]="!formEmail.valid">Enviar Mensagem</button>
+     </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref='/tarefas'></ion-back-button>
+      <ion-title>{{ pageTitle }}</ion-title>
+      <app-logout-button slot='end' menu="main-menu"></app-logout-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]='tarefaForm' (submit)='onSubmit()'>
+    <ion-item>
+      <ion-icon name="paper" slot="start" color="primary"></ion-icon>
+      <ion-input
+        type="text"
+        placeholder="Titulo"
+        autofocus="true"
+        inputmode="text"
+        formControlName='title'
+      >
+      </ion-input>
+      <ion-toggle 
+        *ngIf='tarefaId'
+        slot='end'
+        color="primary"
+        formControlName='done'>
+      </ion-toggle>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]='tarefaForm.invalid'>
+      Salvar
+    </ion-button>
+  </form>
+  
+</ion-content>

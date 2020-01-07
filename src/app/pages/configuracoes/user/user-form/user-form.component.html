@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref='/configuracoes'></ion-back-button>
+      <ion-title>{{ pageTitle }}</ion-title>
+      <app-logout-button slot='end' menu="main-menu"></app-logout-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="user">
+    <ion-list-header>
+      {{ user.displayName }}
+    </ion-list-header>
+
+    <ion-card text-center class="hide-card" *ngIf="user">
+      <img *ngIf="user.photoURL" src="{{ user.photoURL }}" class="custom-avatar"/>
+      <ion-icon *ngIf="!user.photoURL" name="contact" class="custom-avatar" color="primary"></ion-icon>
+    </ion-card>
+
+    <ion-item>
+      <ion-label>Nome: </ion-label>
+      <ion-text>{{ user.displayName }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-text>{{ user.email }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Telefone: </ion-label>
+      <ion-text>{{ user.phoneNumber }}</ion-text>
+    </ion-item>
+   
+  </ion-list>
+
+</ion-content>

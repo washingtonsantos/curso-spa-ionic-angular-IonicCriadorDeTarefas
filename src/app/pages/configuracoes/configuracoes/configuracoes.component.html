@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button defaultHref='/tarefas'></ion-back-button>
+      <ion-title>Configurações</ion-title>
+      <app-logout-button slot='end' menu="main-menu"></app-logout-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item href="/configuracoes/user" class="activated">
+      <ion-icon name="contact" slot="start"></ion-icon>
+      <ion-label>Minha conta</ion-label>
+    </ion-item>
+  
+    <ion-item href="#">
+      <ion-icon name="share" slot="start"></ion-icon>
+      <ion-label>Compartilhar o App</ion-label>
+    </ion-item>
+  
+    <ion-item href="/configuracoes/feedback" class="activated">
+      <ion-icon name="bug" slot="start"></ion-icon>
+      <ion-label>Relatar Problema</ion-label>
+    </ion-item>
+   
+  </ion-card>
+   
+  <ion-card>
+    <ion-item>
+      <ion-icon name="trash" slot="start"></ion-icon>
+      <ion-label>Apagar Conta</ion-label>
+      <ion-toggle fill="outline" disabled="true" slot="end"></ion-toggle>
+    </ion-item>
+  
+    <ion-card-content>
+      Esse processo exclui o usuário e apaga todas as tarefas cadastradas!.
+    </ion-card-content>
+  </ion-card>
+  
+  
+ 
+</ion-content>
